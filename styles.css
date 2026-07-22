@@ -1,0 +1,42 @@
+:root{
+    --sidebar-width: 220px;
+    --accent:#2b6df6;
+    --bg:linear-gradient(180deg,#071028 0%, #081428 100%);
+    --card:#0b1220;
+    --text:#e6eef8;
+    --muted:#94a3b8;
+    color-scheme: dark;
+}
+body.theme-light{
+    --bg:linear-gradient(180deg,#f8fafc 0%, #e2e8f0 100%);
+    --card:#ffffff;
+    --text:#0f1724;
+    --muted:#475569;
+}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial;background:var(--bg);color:var(--text)}
+.app{display:grid;grid-template-columns:var(--sidebar-width) 1fr;height:100vh;gap:16px;padding:16px;box-sizing:border-box}
+.sidebar{background:rgba(255,255,255,0.03);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.brand{font-weight:700;text-align:center;padding:8px 4px;border-bottom:1px solid rgba(255,255,255,0.03);margin-bottom:6px}
+.nav{display:flex;flex-direction:column;gap:6px}
+.nav button{display:flex;align-items:center;gap:10px;padding:10px;border:0;background:transparent;color:var(--muted);border-radius:8px;cursor:pointer}
+.nav button.active{background:linear-gradient(90deg, rgba(43,109,246,0.12), rgba(43,109,246,0.06));color:#dff0ff}
+.nav button span.icon{font-size:20px}
+.main{display:flex;flex-direction:column;gap:12px}
+.main-header{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+.title{font-size:18px;font-weight:700}
+.work{flex:1;background:rgba(255,255,255,0.02);border-radius:10px;padding:16px;display:grid;grid-template-columns:1fr 360px;gap:12px}
+.panel{background:var(--card);padding:12px;border-radius:8px;min-height:200px}
+.panel-split{display:grid;grid-template-columns:1.8fr 1fr;gap:14px;align-items:start}
+.panel-split .panel-main{display:flex;flex-direction:column;gap:14px}
+.panel-split .panel-sidebar{padding:8px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);min-width:180px}
+.panel-section{margin-bottom:14px}
+.button-list{display:grid;gap:8px}
+.list-action{padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:inherit;text-align:left;cursor:pointer;width:100%}
+.list-action.active{background:rgba(43,109,246,0.18);border-color:rgba(43,109,246,0.35);color:#dff0ff}
+.calc-display{background:#081122;padding:12px;border-radius:8px;color:#e6eef8;margin-bottom:10px;font-size:20px}
+.keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.key{padding:12px;border-radius:8px;background:linear-gradient(180deg,#6d93be,#07121d);border:1px solid rgba(255,255,255,0.02);cursor:pointer;text-align:center}
+.right-column{display:flex;flex-direction:column;gap:10px}
+.small{font-size:13px;color:var(--muted)}
+footer{font-size:12px;text-align:center;color:var(--muted);padding:8px}
+@media(max-width:900px){.app{grid-template-columns:1fr} .work{grid-template-columns:1fr} .right-column{order:2}}
